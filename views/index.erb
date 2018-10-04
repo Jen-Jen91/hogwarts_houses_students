@@ -1,0 +1,9 @@
+<h1>Hogwarts Students</h1>
+
+<hr/>
+<% for student in @students %>
+  <p>Name: <%= student.pretty_name() %></p>
+  <p>House: <%= student.house %></p>
+  <p>Age: <%= student.age %></p>
+  <hr/>
+<% end %>
