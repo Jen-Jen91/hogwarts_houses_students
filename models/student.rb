@@ -45,12 +45,17 @@ class Student
   end
 
 
-  def find_house()
-    sql = "SELECT * FROM houses
-    WHERE id = $1;"
-    house_data = SqlRunner.run(sql, [@house_id])
-    house_name = house_data.map { |house| House.new(house) }
-    return house_name[0].name
+  # def find_house()
+  #   sql = "SELECT * FROM houses
+  #   WHERE id = $1;"
+  #   house_data = SqlRunner.run(sql, [@house_id])
+  #   house_name = house_data.map { |house| House.new(house) }
+  #   return house_name[0].name
+  # end
+
+  def house()
+    house = House.find(@house_id)
+    return house
   end
 
 
