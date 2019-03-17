@@ -22,8 +22,3 @@ post("/students") do
   @student.save()
   erb(:create)
 end
-
-# post("/students") do
-#   Student.new(params)
-#   redirect to "/students"
-# end

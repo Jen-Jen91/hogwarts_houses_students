@@ -23,7 +23,6 @@ class Student
     @id = student_data[0]["id"].to_i()
   end
 
-
   def self.delete_all()
     sql = "DELETE FROM students;"
     SqlRunner.run(sql)
@@ -44,20 +43,28 @@ class Student
     return student_info
   end
 
-
-  # def find_house()
-  #   sql = "SELECT * FROM houses
-  #   WHERE id = $1;"
-  #   house_data = SqlRunner.run(sql, [@house_id])
-  #   house_name = house_data.map { |house| House.new(house) }
-  #   return house_name[0].name
-  # end
-
   def house()
     house = House.find(@house_id)
     return house
   end
 
+  def update()
+    sql = "UPDATE students
+    SET(
+      first_name,
+      last_name,
+      house_id,
+      age) = ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@first_name, @last_name, @house_id, @age, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM students
+    WHERE id = $1"
+    SqlRunner.run(sql, [@id])
+  end
 
   def pretty_name()
     return "#{@first_name} #{@second_name}"

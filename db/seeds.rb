@@ -32,17 +32,17 @@ hufflepuff.save()
 
 
 student1 = Student.new({
-  "first_name" => "Katie",
-  "second_name" => "Jeffree",
+  "first_name" => "Luna",
+  "second_name" => "Lovegood",
   "house_id" => ravenclaw.id,
-  "age" => 25
+  "age" => 11
 })
 
 student2 = Student.new({
-  "first_name" => "Jen",
-  "second_name" => "Proctor",
+  "first_name" => "Draco",
+  "second_name" => "Malfoy",
   "house_id" => slytherin.id,
-  "age" => 27
+  "age" => 12
 })
 
 student1.save()

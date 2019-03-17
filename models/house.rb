@@ -11,7 +11,6 @@ class House
     @logo = options["logo"]
   end
 
-
   def self.delete_all()
     sql = "DELETE FROM houses;"
     SqlRunner.run(sql)
@@ -40,7 +39,5 @@ class House
     house_info = house_data.map { |house| House.new(house) }
     return house_info
   end
-
-
 
 end
